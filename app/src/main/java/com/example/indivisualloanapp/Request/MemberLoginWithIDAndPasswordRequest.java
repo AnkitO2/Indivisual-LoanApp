@@ -14,7 +14,6 @@ public class MemberLoginWithIDAndPasswordRequest implements Serializable
     @SerializedName("Password")
     @Expose
     private String password;
-    private final static long serialVersionUID = -2035793857986411031L;
 
     public String getMemberId() {
         return memberId;
