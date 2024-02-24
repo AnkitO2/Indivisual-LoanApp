@@ -13,5 +13,7 @@ private MemberDashboardBinding binding;
         super.onCreate(savedInstanceState);
         binding = MemberDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.year.setText("Student Year :"+getIntent().getStringExtra("Year"));
+        binding.studentId.setText("Member Id :"+getIntent().getStringExtra("memberId"));
     }
 }

@@ -17,12 +17,13 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 private ActivityLoginBinding binding;
+String memberId ="",password ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.loginBtn.setOnClickListener(v ->{
+        binding.loginBtn.setOnClickListener( v -> {
             if (binding.usernameInputEditText.getText().toString().isEmpty()){
                 Toast.makeText(this, "Please enter User Id", Toast.LENGTH_SHORT).show();
             } else if (binding.passwordInputEditText.getText().toString().isEmpty()) {
@@ -31,7 +32,7 @@ private ActivityLoginBinding binding;
             else {
                 userLogin();
             }
-        } );
+        });
     }
     void userLogin(){
         MemberLoginWithIDAndPasswordRequest request = new MemberLoginWithIDAndPasswordRequest();
@@ -42,12 +43,16 @@ private ActivityLoginBinding binding;
             @Override
             public void onResponse(Call<MemberLoginWithIDAndPasswordResponse> call, Response<MemberLoginWithIDAndPasswordResponse> response) {
               if (response.isSuccessful()){
+                  if (response.body().getLoginMessage().equalsIgnoreCase("Member Login Successfull")){
+                      Intent intent =  new Intent(LoginActivity.this,MemberDashboard.class);
+                      intent.putExtra("Year",""+response.body().getMemberLoginWithIDAndPassword().getFinYear());
+                      intent.putExtra("memberId",""+response.body().getMemberLoginWithIDAndPassword().getMemberId());
+                      startActivity(intent);
+                  } else {
+                      Toast.makeText(LoginActivity.this,"response is not successfully"+response.body().getLoginMessage(),Toast.LENGTH_SHORT).show();
 
-                  Intent intent =  new Intent(LoginActivity.this,MemberDashboard.class);
-                  startActivity(intent);
-              }
-              else {
-                  Toast.makeText(LoginActivity.this, "response is not successfully"+response.body().getLoginMessage(), Toast.LENGTH_SHORT).show();
+                  }
+
               }
             }
 
