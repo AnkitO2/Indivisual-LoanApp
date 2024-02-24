@@ -2,6 +2,7 @@ package com.example.indivisualloanapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -40,8 +41,10 @@ private ActivityLoginBinding binding;
         RetrofitClient.getClient().LoginIdAndPassword(request).enqueue(new Callback<MemberLoginWithIDAndPasswordResponse>() {
             @Override
             public void onResponse(Call<MemberLoginWithIDAndPasswordResponse> call, Response<MemberLoginWithIDAndPasswordResponse> response) {
-              if (response.body().getLoginMessage().equalsIgnoreCase("Student Login Successfull")){
+              if (response.isSuccessful()){
 
+                  Intent intent =  new Intent(LoginActivity.this,MemberDashboard.class);
+                  startActivity(intent);
               }
               else {
                   Toast.makeText(LoginActivity.this, "response is not successfully"+response.body().getLoginMessage(), Toast.LENGTH_SHORT).show();

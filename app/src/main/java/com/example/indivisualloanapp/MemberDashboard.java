@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MemberDashboard extends AppCompatActivity {
+import com.example.indivisualloanapp.databinding.MemberDashboardBinding;
 
+public class MemberDashboard extends AppCompatActivity {
+private MemberDashboardBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.member_dashboard);
+        binding = MemberDashboardBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
     }
 }
