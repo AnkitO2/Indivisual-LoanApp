@@ -15,6 +15,18 @@
         android:theme="@style/Theme.IndivisualLoanApp"
         tools:targetApi="31">
         <activity
+            android:name=".ReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrintingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".MemberDashboard"
             android:exported="false" />
         <activity
@@ -27,4 +39,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

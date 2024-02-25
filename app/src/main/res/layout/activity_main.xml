@@ -6,13 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MemberDashboard">
+    tools:context=".MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/white">
-
         <LinearLayout
             android:id="@+id/appBar1"
             android:layout_width="match_parent"
@@ -38,7 +37,14 @@
                 android:textSize="25dp"
                 />
         </LinearLayout>
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MemberLoginWithIDAndPassword"
+            android:textSize="25dp"
+            android:textColor="#E10A0A"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView1"
@@ -49,3 +55,4 @@
         app:menu="@menu/main_menu">
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
+
