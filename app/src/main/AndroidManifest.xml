@@ -15,9 +15,6 @@
         android:theme="@style/Theme.IndivisualLoanApp"
         tools:targetApi="31">
         <activity
-            android:name=".DrawerActivity"
-            android:exported="false" />
-        <activity
             android:name=".MemberDashboard"
             android:exported="false" />
         <activity
@@ -30,5 +27,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

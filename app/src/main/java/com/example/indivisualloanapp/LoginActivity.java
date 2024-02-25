@@ -50,7 +50,6 @@ String memberId ="",password ="";
                       startActivity(intent);
                   } else {
                       Toast.makeText(LoginActivity.this,"response is not successfully"+response.body().getLoginMessage(),Toast.LENGTH_SHORT).show();
-
                   }
 
               }
