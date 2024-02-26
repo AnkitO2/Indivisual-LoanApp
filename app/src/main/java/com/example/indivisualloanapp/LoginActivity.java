@@ -23,6 +23,7 @@ String memberId ="",password ="";
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
         binding.loginBtn.setOnClickListener( v -> {
             if (binding.usernameInputEditText.getText().toString().isEmpty()){
                 Toast.makeText(this, "Please enter User Id", Toast.LENGTH_SHORT).show();
@@ -38,7 +39,6 @@ String memberId ="",password ="";
         MemberLoginWithIDAndPasswordRequest request = new MemberLoginWithIDAndPasswordRequest();
         request.setMemberId(binding.usernameInputEditText.getText().toString());
         request.setPassword(binding.passwordInputEditText.getText().toString());
-
         RetrofitClient.getClient().LoginIdAndPassword(request).enqueue(new Callback<MemberLoginWithIDAndPasswordResponse>() {
             @Override
             public void onResponse(Call<MemberLoginWithIDAndPasswordResponse> call, Response<MemberLoginWithIDAndPasswordResponse> response) {
@@ -47,14 +47,13 @@ String memberId ="",password ="";
                       Intent intent =  new Intent(LoginActivity.this,MemberDashboard.class);
                       intent.putExtra("Year",""+response.body().getMemberLoginWithIDAndPassword().getFinYear());
                       intent.putExtra("memberId",""+response.body().getMemberLoginWithIDAndPassword().getMemberId());
+                      intent.putExtra("MemberID",""+binding.usernameInputEditText.getText().toString());
                       startActivity(intent);
                   } else {
                       Toast.makeText(LoginActivity.this,"response is not successfully"+response.body().getLoginMessage(),Toast.LENGTH_SHORT).show();
                   }
-
               }
             }
-
             @Override
             public void onFailure(Call<MemberLoginWithIDAndPasswordResponse> call, Throwable t) {
                 Toast.makeText(LoginActivity.this,"Something went wrong",Toast.LENGTH_SHORT).show();

@@ -38,7 +38,15 @@
                 android:textSize="25dp"
                 />
         </LinearLayout>
-
+        <TextView
+            android:id="@+id/userId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome Member Dashboard"
+            android:textSize="20dp"
+            android:textColor="#E10A0A"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
     </LinearLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView1"

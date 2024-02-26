@@ -20,8 +20,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-         //binding.year.setText("Student Year :"+getIntent().getStringExtra("Year"));
-        // binding.memberId.setText("memberId :"+getIntent().getStringExtra("MEMBER ID"));
+       binding.year.setText("Student Year :"+getIntent().getStringExtra("Year"));
+       binding.memberId.setText("Member Id  :"+getIntent().getStringExtra("MemberID"));
+
             binding.menuIcon.setOnClickListener(v -> {
             binding.drawerLayout1.openDrawer(GravityCompat.START);
         });
@@ -31,6 +32,17 @@ public class MainActivity extends AppCompatActivity {
                     int itemId = menuItem.getItemId();
                     if (itemId == R.id.Loan1){
                         Intent intent = new Intent(MainActivity.this,MemberDashboard.class);
+                        intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
+                        startActivity(intent);
+                    } else if (itemId ==R.id.Loan2) {
+                        Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                        startActivity(intent);
+                    } else if (itemId ==R.id.Loan3) {
+                        Intent intent = new Intent(MainActivity.this,PrintingActivity.class);
+                        startActivity(intent);
+                    } else if (itemId==R.id.Loan4) {
+                        Intent intent = new Intent(MainActivity.this,ReportActivity.class);
+                        intent.putExtra("MemberId",""+getIntent().getStringExtra("MemberId"));
                         startActivity(intent);
                     }
                     return true; // Return true to indicate that the item click is handled
