@@ -51,6 +51,9 @@ private ActivityHomeBinding binding;
                     Intent intent = new Intent(HomeActivity.this,ReportActivity.class);
                     intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
                     startActivity(intent);
+                } else if (itemId==R.id.Loan5) {
+                    Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
+                    startActivity(intent);
                 }
                 return true; // Return true to indicate that the item click is handled
             }

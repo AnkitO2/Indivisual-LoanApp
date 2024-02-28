@@ -40,6 +40,7 @@ private ActivityReportBinding binding;
                 if (itemId == R.id.Loan1){
                     Intent intent = new Intent(ReportActivity.this,MainActivity.class);
                     intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
+                    intent.putExtra("Year",""+getIntent().getStringExtra("Year"));
                     startActivity(intent);
                 } else if (itemId ==R.id.Loan2) {
                     Intent intent = new Intent(ReportActivity.this , HomeActivity.class);
@@ -52,6 +53,9 @@ private ActivityReportBinding binding;
                 } else if (itemId==R.id.Loan4) {
                     Intent intent = new Intent(ReportActivity.this,MemberDashboard.class);
                     intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
+                    startActivity(intent);
+                } else if (itemId==R.id.Loan5) {
+                    Intent intent = new Intent(ReportActivity.this,LoginActivity.class);
                     startActivity(intent);
                 }
                 return true; // Return true to indicate that the item click is handled

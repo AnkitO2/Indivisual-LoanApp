@@ -30,9 +30,9 @@ private ActivityPrintingBinding binding;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityPrintingBinding.inflate(getLayoutInflater());
-        CardPrintingData();
         setContentView(binding.getRoot());
-        //binding.memberId.setText(""+getIntent().getStringExtra("MemberID"));
+        CardPrintingData();
+        binding.memberId.setText(""+getIntent().getStringExtra("MemberID"));
         binding.menuIcon.setOnClickListener(v -> {
             binding.drawerLayout1.openDrawer(GravityCompat.START);
         });
@@ -43,6 +43,7 @@ private ActivityPrintingBinding binding;
                 if (itemId == R.id.Loan1){
                     Intent intent = new Intent(PrintingActivity.this,MainActivity.class);
                     intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
+                    intent.putExtra("Year",""+getIntent().getStringExtra("Year"));
                     startActivity(intent);
                 } else if (itemId ==R.id.Loan2) {
                     Intent intent = new Intent(PrintingActivity.this , HomeActivity.class);
@@ -55,6 +56,9 @@ private ActivityPrintingBinding binding;
                 } else if (itemId==R.id.Loan4) {
                     Intent intent = new Intent(PrintingActivity.this,ReportActivity.class);
                     intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
+                    startActivity(intent);
+                } else if (itemId ==R.id.Loan5) {
+                    Intent intent = new Intent(PrintingActivity.this,LoginActivity.class);
                     startActivity(intent);
                 }
                 return true; // Return true to indicate that the item click is handled
