@@ -48,9 +48,7 @@ public class MemberLoanCardPrinting {
     @Expose
     private String officerName;
 
-    public String getBranchName() {
-        return branchName;
-    }
+    public String getBranchName() {return branchName;}
 
     public void setBranchName(String branchName) {
         this.branchName = branchName;

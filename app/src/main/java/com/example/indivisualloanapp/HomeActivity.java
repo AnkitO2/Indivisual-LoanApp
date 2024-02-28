@@ -28,7 +28,6 @@ private ActivityHomeBinding binding;
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         homeDashboardData();
         setContentView(binding.getRoot());
-
         binding.menuIcon.setOnClickListener(v -> {
             binding.drawerLayout1.openDrawer(GravityCompat.START);
         });
@@ -38,16 +37,19 @@ private ActivityHomeBinding binding;
                 int itemId = menuItem.getItemId();
                 if (itemId == R.id.Loan1){
                     Intent intent = new Intent(HomeActivity.this,MainActivity.class);
-                    intent.putExtra("MemberId",""+getIntent().getStringExtra("MemberId"));
+                    intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
                     startActivity(intent);
                 } else if (itemId ==R.id.Loan2) {
                     Intent intent = new Intent(HomeActivity.this , MemberDashboard.class);
+                    intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
                     startActivity(intent);
                 } else if (itemId ==R.id.Loan3) {
                     Intent intent = new Intent(HomeActivity.this,PrintingActivity.class);
+                    intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
                     startActivity(intent);
                 } else if (itemId==R.id.Loan4) {
                     Intent intent = new Intent(HomeActivity.this,ReportActivity.class);
+                    intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
                     startActivity(intent);
                 }
                 return true; // Return true to indicate that the item click is handled
@@ -56,8 +58,8 @@ private ActivityHomeBinding binding;
     }
     void homeDashboardData(){
         MemberHomePageAndDashboardRequest memberHomePageAndDashboardRequest = new MemberHomePageAndDashboardRequest();
-        memberHomePageAndDashboardRequest.setMemberId(getIntent().getStringExtra("MemberId"));
-        // memberHomePageAndDashboardRequest.setMemberId(getIntent().getStringExtra("memberId"));
+        memberHomePageAndDashboardRequest.setMemberId(getIntent().getStringExtra("MemberID"));
+
         RetrofitClient.getClient().ClientDashboard(memberHomePageAndDashboardRequest).enqueue(new Callback<MemberHomePageAndDashboardResponse>() {
             @Override
             public void onResponse(Call<MemberHomePageAndDashboardResponse> call, Response<MemberHomePageAndDashboardResponse> response) {
@@ -88,16 +90,6 @@ private ActivityHomeBinding binding;
                     binding.homeData23.setText("Total Interest"+response.body().getMemberHomePageAndDashboard().getTotalInterest());
                     binding.homeData24.setText("Total Payable :"+response.body().getMemberHomePageAndDashboard().getTotalPayable());
                     binding.homeData25.setText("Total Penalty :"+response.body().getMemberHomePageAndDashboard().getTotalPenalty());
-
-
-//                    binding.txt.setText("Student Id  :"+response.body().getStudentHomePageAndDashboard().getStudentId()+"\n"+
-//                            "RegistrationDate  :"+response.body().getStudentHomePageAndDashboard().getRegistrationDate()+"\n"+
-//                            "ClassName  :"+response.body().getStudentHomePageAndDashboard().getClassName()+"\n"+
-//                            "StudentName  :"+response.body().getStudentHomePageAndDashboard().getStudentName()+"\n"+
-//                            "Gurdian Name  :"+response.body().getStudentHomePageAndDashboard().getGuardianName() +"\n"+
-//                            "Gender  :"+response.body().getStudentHomePageAndDashboard().getGender() +"\n"+
-//                            "Category  :"+response.body().getStudentHomePageAndDashboard().getCategory() +"\n");
-//
 
                 } else  {
                     Toast.makeText(HomeActivity.this, "response is not successfully", Toast.LENGTH_SHORT).show();

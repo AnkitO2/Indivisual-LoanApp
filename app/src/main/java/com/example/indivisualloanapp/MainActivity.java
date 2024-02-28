@@ -36,13 +36,15 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                     } else if (itemId ==R.id.Loan2) {
                         Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+                        intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
                         startActivity(intent);
                     } else if (itemId ==R.id.Loan3) {
                         Intent intent = new Intent(MainActivity.this,PrintingActivity.class);
+                        intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
                         startActivity(intent);
                     } else if (itemId==R.id.Loan4) {
                         Intent intent = new Intent(MainActivity.this,ReportActivity.class);
-                        intent.putExtra("MemberId",""+getIntent().getStringExtra("MemberId"));
+                        intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
                         startActivity(intent);
                     }
                     return true; // Return true to indicate that the item click is handled

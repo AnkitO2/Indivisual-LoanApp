@@ -27,9 +27,7 @@ private MemberDashboardBinding binding;
        // binding.memberId.setText("memberId :"+getIntent().getStringExtra("MEMBERC ID"));
         binding.menuIcon.setOnClickListener(v -> {
           binding.drawerLayout1.openDrawer(GravityCompat.START);
-
         });
-
         binding.navigationView1.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -42,10 +40,12 @@ private MemberDashboardBinding binding;
 
                 } else if (itemId == R.id.Loan2) {
                     Intent intent = new Intent(MemberDashboard.this,HomeActivity.class);
+                    intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
                     startActivity(intent);
 
                 } else if (itemId == R.id.Loan3) {
                     Intent intent =new Intent(MemberDashboard.this,PrintingActivity.class);
+                    intent.putExtra("MemberID",""+getIntent().getStringExtra("MemberID"));
                     startActivity(intent);
                 } else if (itemId == R.id.Loan4) {
                     Intent intent =new Intent(MemberDashboard.this,ReportActivity.class);

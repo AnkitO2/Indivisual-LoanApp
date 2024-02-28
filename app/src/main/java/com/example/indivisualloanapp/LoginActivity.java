@@ -23,7 +23,6 @@ String memberId ="",password ="";
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         binding.loginBtn.setOnClickListener( v -> {
             if (binding.usernameInputEditText.getText().toString().isEmpty()){
                 Toast.makeText(this, "Please enter User Id", Toast.LENGTH_SHORT).show();
@@ -46,7 +45,7 @@ String memberId ="",password ="";
                   if (response.body().getLoginMessage().equalsIgnoreCase("Member Login Successfull")){
                       Intent intent =  new Intent(LoginActivity.this,MemberDashboard.class);
                       intent.putExtra("Year",""+response.body().getMemberLoginWithIDAndPassword().getFinYear());
-                      intent.putExtra("memberId",""+response.body().getMemberLoginWithIDAndPassword().getMemberId());
+                      intent.putExtra("MemberID",""+response.body().getMemberLoginWithIDAndPassword().getMemberId());
                       intent.putExtra("MemberID",""+binding.usernameInputEditText.getText().toString());
                       startActivity(intent);
                   } else {

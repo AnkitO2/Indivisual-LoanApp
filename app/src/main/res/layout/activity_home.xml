@@ -45,32 +45,32 @@
             android:textColor="#E10A0A"
             android:textStyle="bold"
             android:textAlignment="center"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="16dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:weightSum="2">-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_weight="1"
-                android:text="Holiday Date"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_weight="1"
-                android:text="Holiday Name"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="left"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="Holiday Date"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp" />-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="left"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="Holiday Name"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="12sp" />-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,7 +83,7 @@
                 android:id="@+id/homeData1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -102,7 +102,7 @@
                 android:id="@+id/homeData2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -121,7 +121,7 @@
                 android:id="@+id/homeData3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+             android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -140,7 +140,7 @@
                 android:id="@+id/homeData4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -159,7 +159,7 @@
                 android:id="@+id/homeData5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -179,7 +179,7 @@
                 android:id="@+id/homeData6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -198,7 +198,7 @@
                 android:id="@+id/homeData7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -217,7 +217,7 @@
                 android:id="@+id/homeData8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -237,7 +237,7 @@
                 android:id="@+id/homeData9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -256,7 +256,7 @@
                 android:id="@+id/homeData10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -273,7 +273,7 @@
                 android:id="@+id/homeData11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -290,7 +290,7 @@
                 android:id="@+id/homeData12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+              android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -307,7 +307,7 @@
                 android:id="@+id/homeData13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -324,7 +324,7 @@
                 android:id="@+id/homeData14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+              android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -341,7 +341,7 @@
                 android:id="@+id/homeData15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -358,7 +358,7 @@
                 android:id="@+id/homeData16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -375,7 +375,7 @@
                 android:id="@+id/homeData17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -392,7 +392,7 @@
                 android:id="@+id/homeData18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -409,7 +409,7 @@
                 android:id="@+id/homeData19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -426,7 +426,7 @@
                 android:id="@+id/homeData20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -443,7 +443,7 @@
                 android:id="@+id/homeData21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -460,7 +460,7 @@
                 android:id="@+id/homeData22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -477,7 +477,7 @@
                 android:id="@+id/homeData23"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+               android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -494,7 +494,7 @@
                 android:id="@+id/homeData24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+              android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
@@ -511,7 +511,7 @@
                 android:id="@+id/homeData25"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
+                android:textAlignment="center"
                 android:layout_weight="1"
                 android:text="Welcome"
                 android:textColor="@color/black"
