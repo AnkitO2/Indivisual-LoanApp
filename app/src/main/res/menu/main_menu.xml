@@ -18,6 +18,9 @@
     <item android:id="@+id/Loan5"
         android:icon="@drawable/logout_icon"
         android:title="Logout"/>
+    <item android:id="@+id/Loan6"
+        android:icon="@drawable/logout_icon"
+        android:title="Get Location"/>
 </group>
 
 </menu>

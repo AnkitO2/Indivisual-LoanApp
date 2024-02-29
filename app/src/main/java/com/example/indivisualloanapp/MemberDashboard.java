@@ -13,10 +13,16 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.indivisualloanapp.Request.MemberLoginWithIDAndPasswordRequest;
+import com.example.indivisualloanapp.Response.MemberLoginWithIDAndPasswordResponse;
+import com.example.indivisualloanapp.Retrofit.RetrofitClient;
 import com.example.indivisualloanapp.databinding.MemberDashboardBinding;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MemberDashboard extends AppCompatActivity {
 private MemberDashboardBinding binding;
@@ -27,7 +33,8 @@ SharedPreferences sharedPreferences;
         binding = MemberDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         memberDashboard();
-        sharedPreferences = getSharedPreferences("MyPREFERENCES", Context.MODE_PRIVATE);
+        sharedPreferences =getSharedPreferences("MyPREFERENCES",Context.MODE_PRIVATE);
+       // sharedPreferences = getSharedPreferences("MyPREFERENCES", Context.MODE_PRIVATE);
       // binding.userId.setText("Welcome Member Dashboard:"+getIntent().getStringExtra("MemberID"));
        // binding.memberId.setText("memberId :"+getIntent().getStringExtra("MEMBERC ID"));
         binding.menuIcon.setOnClickListener(v -> {
@@ -59,6 +66,9 @@ SharedPreferences sharedPreferences;
                 } else if (itemId ==R.id.Loan5) {
                      Intent intent =new Intent(MemberDashboard.this,LoginActivity.class);
                      startActivity(intent);
+                } else if (itemId==R.id.Loan6) {
+                    Intent intent = new Intent(MemberDashboard.this,LocationActivity.class);
+                    startActivity(intent);
                 }
                 return true; // Return true to indicate that the item click is handled
             }
@@ -66,11 +76,27 @@ SharedPreferences sharedPreferences;
     }
     void memberDashboard(){
         MemberLoginWithIDAndPasswordRequest request = new MemberLoginWithIDAndPasswordRequest();
-//        if (sharedPreferences.getString("memberId","").isEmpty()){
-//            request.setMemberId("MemberId"+getIntent().getStringExtra("MemberID"));
+        request.setMemberId(getIntent().getStringExtra("MemberID"));
+//        if (sharedPreferences.getString("MemberID","").isEmpty()){
+//            request.setMemberId("MemberID"+getIntent().getStringExtra("MemberID"));
 //        }else {
-//            request.setMemberId("MemberId"+sharedPreferences.getString("memberId",""));
+//            request.setMemberId("MemberID"+sharedPreferences.getString("memberId",""));
 //        }
+        RetrofitClient.getClient().LoginIdAndPassword(request).enqueue(new Callback<MemberLoginWithIDAndPasswordResponse>() {
+            @Override
+            public void onResponse(Call<MemberLoginWithIDAndPasswordResponse> call, Response<MemberLoginWithIDAndPasswordResponse> response) {
+                if (response.isSuccessful()){
+                    binding.memberId.setText(response.body().getMessage());
+                    binding.year.setText(response.body().getMemberLoginWithIDAndPassword().getFinYear());
+                }else {
 
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MemberLoginWithIDAndPasswordResponse> call, Throwable t) {
+
+            }
+        });
     }
 }

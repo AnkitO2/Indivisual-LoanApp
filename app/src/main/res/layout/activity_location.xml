@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".LocationActivity">
+
+    <!--    <TextView-->
+<!--        android:id="@+id/latitute"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Latitute"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textColor="#0E0E0E"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textAlignment="center"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/logitute"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Logitute"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textColor="#0E0E0E"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textAlignment="center"/>-->
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Current Location"
+        android:textAlignment="center"
+        android:textColor="#0E0E0E"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Location"
+        android:textSize="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="130dp"
+        android:textColor="#0E0E0E"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:layout_below="@+id/location"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        android:id="@+id/address"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:layout_below="@+id/address"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:id="@+id/city"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Country"
+        android:layout_below="@+id/city"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:id="@+id/country"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Latitute"
+        android:layout_below="@+id/country"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:id="@+id/latitute"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logitute"
+        android:layout_below="@+id/latitute"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:id="@+id/logitute"
+        android:textStyle="bold"/>
+</RelativeLayout>
